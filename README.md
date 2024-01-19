@@ -13,3 +13,10 @@
 
 - 영속성 컨텍스트를 비우진 않음 
 - 영속성 컨텍스트의 변경내용을 데이터베이스에 동기화 
+
+### 스키마 자동생성 
+
+`hibernate.hbm2ddl.auto`
+
+- `create` : 스키마 생성 - 개발기에서 사용 X (`DROP + CREATE`)
+- `create-drop` : 종료시점에 `DROP`
