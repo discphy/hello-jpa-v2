@@ -37,3 +37,17 @@
 - `@Transient` : 엔티티 생성 X
 - `@Column`의 `unique`에서는 잘 안쓰고 `@Table`에서 사용 (여러개 복합 및 키 이름 지정 가능)
 - `@Enumerated` : 반드시 `EnumType.STRING`로 사용하는 편 
+
+### 기본 키 매핑
+
+---
+
+- `IDENTITY` : 기본 키 생성을 데이터베이스에 위임 - INSERT 쿼리 이후 ID를 알 수 있음
+그러나, H2 Database가 업데이트 되었는지 ID를 지정 하지 않으면 다음과 같은 에러 발생
+```log
+ERROR: NULL not allowed for column "ID"; SQL statement:
+```
+
+- 기본키 제약 조건 : null 아님, 변하면 안된다.
+
+
