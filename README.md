@@ -49,5 +49,7 @@ ERROR: NULL not allowed for column "ID"; SQL statement:
 ```
 
 - 기본키 제약 조건 : null 아님, 변하면 안된다.
+- `@SequenceGenerator` : `allocationSize` 해당 값 만큼 `nextValue`를 확보하고 시퀀스 값을 세팅한다. 
+(동시성 문제 해결)
 
 
