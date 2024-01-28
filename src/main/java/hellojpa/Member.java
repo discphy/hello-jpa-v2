@@ -40,7 +40,17 @@ public class Member {
 		return team;
 	}
 
-	public void setTeam(Team team) {
+	public void addTeam(Team team) {
 		this.team = team;
+		this.team.getMembers().add(this);
+	}
+
+	@Override
+	public String toString() {
+		return "Member{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", team=" + team +
+				'}';
 	}
 }
