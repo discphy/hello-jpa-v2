@@ -86,5 +86,5 @@ ERROR: NULL not allowed for column "ID"; SQL statement:
 
 - 다대다 : `@ManyToMany` 는 실무에서 쓰면 안됨
 - 일대다 단방향은 실무에서 사용하지 말 것 -> 다대일 양방향 매핑을 사용
-
+- 일대일에서 대상테이블에 외래키 사용 시, 기능의 한계로 즉시 로딩을 하는 단점이 있다.
 
