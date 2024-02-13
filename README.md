@@ -89,3 +89,13 @@ ERROR: NULL not allowed for column "ID"; SQL statement:
 - 일대일에서 대상테이블에 외래키 사용 시, 기능의 한계로 즉시 로딩을 하는 단점이 있다.
 - `@ManyToOne`은 `mappedBy`가 없어 연관관계 주인이 되어야 한다.
 
+### 고급 매핑 
+
+---
+
+- 상속관계 매핑 : 구현방법은 3가지
+
+  - 조인 전략(`@Inheritance(strategy = JOINED)`) : 정석적인 방법이다. 
+  - 단일 테이블 전략(`@Inheritance(strategy = SINGLE_TABLE)`) : `NULL` 허용에 대한 문제 
+  - 구현 클래스마다 테이블 전략(`@Inheritance(strategy = TABLE_PER_CLASS)`) : 조회 시, `union`을 사용하기 때문에 성능 저하 > 쓰면 안됨.. 
+
