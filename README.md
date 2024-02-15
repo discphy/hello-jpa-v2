@@ -97,5 +97,12 @@ ERROR: NULL not allowed for column "ID"; SQL statement:
 
   - 조인 전략(`@Inheritance(strategy = JOINED)`) : 정석적인 방법이다. 
   - 단일 테이블 전략(`@Inheritance(strategy = SINGLE_TABLE)`) : `NULL` 허용에 대한 문제 
-  - 구현 클래스마다 테이블 전략(`@Inheritance(strategy = TABLE_PER_CLASS)`) : 조회 시, `union`을 사용하기 때문에 성능 저하 > 쓰면 안됨.. 
+  - 구현 클래스마다 테이블 전략(`@Inheritance(strategy = TABLE_PER_CLASS)`) : 조회 시, `union`을 사용하기 때문에 성능 저하 > 쓰면 안됨..
+
+- `@MappedSuperclass`
+  
+  - 상속관계 매핑 X 
+  - 엔티티 X 
+  - 추상 클래스 권장
+
 
