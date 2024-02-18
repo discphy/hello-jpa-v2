@@ -117,3 +117,11 @@ ERROR: NULL not allowed for column "ID"; SQL statement:
   - 프록시 객체는 원본 엔티티를 상속받음, 타입 체크시 주의필요 (`instance of`로 확인, `==` 으로 비교하면 안됨)
   - 영속성 컨텍스트에 엔티티가 이미 있으면 `em.getReference()`를 호출해도 실제 엔티티 반환
   - 프록시 `==` 엔티티 항상 `true`
+
+---
+
+### 즉시로딩과 지연로딩 
+
+- 가급적 지연 로딩만 사용(특히 실무에서)
+- 즉시로딩은 `JPQL`에서 N + 1 문제를 일으킨다
+- `@ManyToOne`, `@OneToOne`은 기본이 즉시 로딩 -> `LAZY`로 설정 
