@@ -124,4 +124,10 @@ ERROR: NULL not allowed for column "ID"; SQL statement:
 
 - 가급적 지연 로딩만 사용(특히 실무에서)
 - 즉시로딩은 `JPQL`에서 N + 1 문제를 일으킨다
-- `@ManyToOne`, `@OneToOne`은 기본이 즉시 로딩 -> `LAZY`로 설정 
+- `@ManyToOne`, `@OneToOne`은 기본이 즉시 로딩 -> `LAZY`로 설정
+
+---
+
+### CASCADE : 영속성 전이
+
+- 영속성 전이는 연관관계를 매핑하는 것과 아무 관련이 없음 
