@@ -130,4 +130,12 @@ ERROR: NULL not allowed for column "ID"; SQL statement:
 
 ### CASCADE : 영속성 전이
 
-- 영속성 전이는 연관관계를 매핑하는 것과 아무 관련이 없음 
+- 영속성 전이는 연관관계를 매핑하는 것과 아무 관련이 없음
+
+---
+
+### 고아객체 
+
+- `orphanRemoval = true`
+- 참조하는 곳이 하나일 때 사용해야함 
+- **특정 엔티티가 개인 소유할 때만 사용**
