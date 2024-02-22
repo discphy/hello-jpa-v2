@@ -13,12 +13,13 @@ public class Member extends BaseEntity {
 	@Column(name = "USERNAME")
 	private String username;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "TEAM_ID")
-	private Team team;
+	// Period
+	@Embedded
+	private Period workPeriod;
 
-	public Member() {
-	}
+	// Address
+	@Embedded
+	private Address homeAddress;
 
 	public Long getId() {
 		return id;
@@ -36,21 +37,19 @@ public class Member extends BaseEntity {
 		this.username = username;
 	}
 
-	public Team getTeam() {
-		return team;
+	public Period getWorkPeriod() {
+		return workPeriod;
 	}
 
-	public void addTeam(Team team) {
-		this.team = team;
-		this.team.getMembers().add(this);
+	public void setWorkPeriod(Period workPeriod) {
+		this.workPeriod = workPeriod;
 	}
 
-	@Override
-	public String toString() {
-		return "Member{" +
-				"id=" + id +
-				", username='" + username + '\'' +
-				", team=" + team +
-				'}';
+	public Address getHomeAddress() {
+		return homeAddress;
+	}
+
+	public void setHomeAddress(Address homeAddress) {
+		this.homeAddress = homeAddress;
 	}
 }
